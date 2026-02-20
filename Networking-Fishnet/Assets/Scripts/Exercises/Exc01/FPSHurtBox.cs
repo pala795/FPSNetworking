@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
+using UnityEngine;
 
 public class FPSHurtBox : NetworkBehaviour
 {

@@ -15,7 +15,7 @@ public class Barrel : NetworkBehaviour
     {
         Debug.Log("Exploding barrel...");
         if (_hurtBox == null) return;
-        _hurtBox.HurtboxEnabler.Value = true;
+        _hurtBox.HurtBoxEnabler.Value = true;
         Debug.Log("Barrel exploded!");
         StartCoroutine(ResetAfterCooldown(1f));
     }

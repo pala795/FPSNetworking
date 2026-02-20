@@ -17,16 +17,17 @@ public class HealthBarUI : NetworkBehaviour
         _fillAmount.Value = _slider.value;
         _fillAmount.OnChange += OnHealthChanged;
     }
-    
+
     private void OnHealthChanged(float prev, float next, bool asServer)
     {
         _fillAmount.Value = next;
         _slider.value = _fillAmount.Value;
     }
-
     private void UpdateFillAmount(int prev, int next, bool asServer)
     {
+        Debug.Log("UPDATING FILL AMOUNT");
         _fillAmount.Value = (float)next / 100;
+        _slider.value = _fillAmount.Value;
     }
 
     #region Subscribe To HealthComponent

@@ -39,6 +39,7 @@ public class FireComponent : NetworkBehaviour
             }
             if(hit.transform.TryGetComponent(out Barrel target))
             {
+                Debug.Log("Barrel hit!");
                 target.Explode();
             }
         }

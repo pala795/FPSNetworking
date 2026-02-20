@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -16,6 +17,7 @@ public class HurtBox : MonoBehaviour
     {
         _collider.enabled = value;
     }
+
     
     private void OnTriggerEnter2D(Collider2D other)
     {

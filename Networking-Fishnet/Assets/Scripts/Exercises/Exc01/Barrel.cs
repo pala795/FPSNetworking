@@ -18,7 +18,7 @@ public class Barrel : NetworkBehaviour
         _hurtBox.EnableCollider(true);
         Debug.Log("Barrel exploded!");
         StartCoroutine(ResetAfterCooldown(1f));
-        transform.gameObject.SetActive(false);
+        Despawn(transform.gameObject);
     }
     private IEnumerator ResetAfterCooldown(float cooldown)
     {

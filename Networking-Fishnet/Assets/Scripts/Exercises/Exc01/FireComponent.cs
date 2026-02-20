@@ -6,6 +6,12 @@ using UnityEngine;
 public class FireComponent : NetworkBehaviour
 {
     private LookComponent _lookComponent;
+    //private LineRenderer _lineRenderer;
+
+    //private void Awake()
+    //{
+    //    _lineRenderer = GetComponent<LineRenderer>();
+    //}
 
     public override void OnStartClient()
     {
@@ -28,10 +34,12 @@ public class FireComponent : NetworkBehaviour
     {
         var centerScreen = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         Ray ray = _lookComponent.Camera.ScreenPointToRay(centerScreen);
+        //_lineRenderer.SetPosition(0, ray.origin);
 
         if (Physics.Raycast(ray, out var hit))
         {
             Debug.Log(hit.transform.name);
+            //_lineRenderer.SetPosition(1, hit.point);
             
             if (hit.transform.TryGetComponent(out HealthComponent health))
             {

@@ -11,6 +11,8 @@ public class HealthBarUI : NetworkBehaviour
 {
     private Slider _slider;
     private readonly SyncVar<float> _fillAmount = new ();
+    [SerializeField] private Image _background;
+    [SerializeField] private Image _fillArea;
 
     private void Awake()
     {
@@ -19,6 +21,22 @@ public class HealthBarUI : NetworkBehaviour
         _fillAmount.OnChange += OnHealthChanged;
         Transform twodegreesabove = transform.parent.parent;
         twodegreesabove.GetComponent<HealthComponent>().Health.OnChange += UpdateFillAmount;
+    }
+
+    [ServerRpc(RequireOwnership = true)] //i give up on this lol
+    private void Start()
+    {
+        HideHealthBar();
+    }
+
+    private void HideHealthBar() 
+    {
+        var tempColorBG = _background.color;
+        var tempColorFill = _fillArea.color;
+        tempColorBG.a = 0;
+        tempColorFill.a = 0;
+        _background.color = tempColorBG;
+        _fillArea.color = tempColorFill;
     }
 
     private void OnHealthChanged(float prev, float next, bool asServer)

@@ -8,23 +8,23 @@ public class Barrel : NetworkBehaviour
     private FPSHurtBox _hurtBox;
     private void Awake()
     {
-        _hurtBox = GetComponentInChildren<FPSHurtBox>(includeInactive : true);
+        _hurtBox = GetComponentInChildren<FPSHurtBox>(includeInactive: true);
     }
-    [ServerRpc (RequireOwnership = false)]
+    [ServerRpc(RequireOwnership = false)]
     public void Explode()
     {
         Debug.Log("Exploding barrel...");
         if (_hurtBox == null) return;
-        _hurtBox.EnableCollider(true);
+        _hurtBox.HurtboxEnabler.Value = true;
         Debug.Log("Barrel exploded!");
         StartCoroutine(ResetAfterCooldown(1f));
-        Despawn(transform.gameObject);
     }
     private IEnumerator ResetAfterCooldown(float cooldown)
     {
         Debug.Log("Resetting barrel after cooldown...");
         yield return new WaitForSeconds(cooldown);
         Debug.Log("Reset barrel...");
-        _hurtBox.EnableCollider(false);
+        Despawn(transform.gameObject);
     }
 }
+

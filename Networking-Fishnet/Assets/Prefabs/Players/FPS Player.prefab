@@ -1058,6 +1058,8 @@ MonoBehaviour:
   _componentIndexCache: 5
   _addedNetworkObject: {fileID: 6229700513813524563}
   _networkObjectCache: {fileID: 6229700513813524563}
+  _background: {fileID: 7532309672456572118}
+  _fillArea: {fileID: 6456487273015199234}
 --- !u!1 &7720818051540184293
 GameObject:
   m_ObjectHideFlags: 0

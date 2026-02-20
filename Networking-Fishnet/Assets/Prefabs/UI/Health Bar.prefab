@@ -291,3 +291,5 @@ MonoBehaviour:
   _componentIndexCache: 0
   _addedNetworkObject: {fileID: 0}
   _networkObjectCache: {fileID: 0}
+  _background: {fileID: 0}
+  _fillArea: {fileID: 0}

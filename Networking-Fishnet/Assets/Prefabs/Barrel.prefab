@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FPSHurtBox
   _damage: 10
   _collider: {fileID: 7242291258846904086}
+  _meshRenderer: {fileID: 2989642840069912282}
 --- !u!1 &8769738432758401149
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6833625951059267727
 Transform:
   m_ObjectHideFlags: 0
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3271949112190836712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -109,7 +109,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -125,8 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1430eb8fac35b544a950c4c4b0887191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSHurtBox
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 5377744101051434408}
+  _networkObjectCache: {fileID: 0}
   _damage: 10
   _collider: {fileID: 7242291258846904086}
+  _meshRenderer: {fileID: 2989642840069912282}
 --- !u!1 &8769738432758401149
 GameObject:
   m_ObjectHideFlags: 0

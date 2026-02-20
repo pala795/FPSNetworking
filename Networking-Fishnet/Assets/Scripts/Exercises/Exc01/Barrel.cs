@@ -15,16 +15,16 @@ public class Barrel : NetworkBehaviour
     {
         Debug.Log("Exploding barrel...");
         if (_hurtBox == null) return;
-        _hurtBox.EnableCollider(true);
+        _hurtBox.HurtBoxEnabler.Value = true;
         Debug.Log("Barrel exploded!");
         StartCoroutine(ResetAfterCooldown(1f));
-        Despawn(transform.gameObject);
+        
     }
     private IEnumerator ResetAfterCooldown(float cooldown)
     {
         Debug.Log("Resetting barrel after cooldown...");
         yield return new WaitForSeconds(cooldown);
         Debug.Log("Reset barrel...");
-        _hurtBox.EnableCollider(false);
+        Despawn(transform.gameObject);
     }
 }

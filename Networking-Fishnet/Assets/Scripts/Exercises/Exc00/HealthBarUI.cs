@@ -1,3 +1,4 @@
+using FishNet.Component.Transforming;
 using FishNet.Connection;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
@@ -16,6 +17,8 @@ public class HealthBarUI : NetworkBehaviour
         _slider = GetComponent<Slider>();
         _fillAmount.Value = _slider.value;
         _fillAmount.OnChange += OnHealthChanged;
+        Transform twodegreesabove = transform.parent.parent;
+        twodegreesabove.GetComponent<HealthComponent>().Health.OnChange += UpdateFillAmount;
     }
 
     private void OnHealthChanged(float prev, float next, bool asServer)

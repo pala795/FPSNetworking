@@ -37,6 +37,10 @@ public class FireComponent : NetworkBehaviour
             {
                 health.TakeDamage(5);
             }
+            if(hit.transform.TryGetComponent(out Barrel target))
+            {
+                target.Explode();
+            }
         }
     }
 }

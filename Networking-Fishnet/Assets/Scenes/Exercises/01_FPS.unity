@@ -270,7 +270,7 @@ MonoBehaviour:
   _ipv6BindAddress: 
   _port: 7777
   _maximumClients: 4095
-  _clientAddress: 192.168.1.173
+  _clientAddress: 192.168.1.203
 --- !u!1001 &229379719
 PrefabInstance:
   m_ObjectHideFlags: 0

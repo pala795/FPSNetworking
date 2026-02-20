@@ -14,7 +14,7 @@ public class FPSHurtBox : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == gameObject) return;
+        //if (other.gameObject == gameObject) return;
         if (other.TryGetComponent(out HealthComponent health))
         {
             health.TakeDamage(_damage);
